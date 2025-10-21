@@ -1,0 +1,235 @@
+/* login.css
+   Estilos para: pantalla de login, dashboard y lista de usuarios
+   Guarda en: mi-proyecto/css/login.css
+*/
+
+/* Reset ligero */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+:root{
+  --bg-start: #f0fff9;
+  --bg-end: #e9fbfb;
+  --card-bg: #ffffff;
+  --accent: #00c29a; /* verde/aguamarina */
+  --accent-dark: #0ea37b;
+  --muted: #9aa0a6;
+  --black-btn: #0b0810;
+  --success: #d6f8e6;
+  --danger: #ffe6e6;
+  --purple: #f3e7ff;
+}
+
+/* Fondo de página con gradiente y ligera textura */
+body{
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 20%, #eafdf9 0%, transparent 20%),
+              linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #111827;
+}
+
+/* CARD GENERAL */
+.card {
+  width: 520px;
+  max-width: 95%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(15,40,30,0.06);
+  padding: 44px 48px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ICON CIRCULAR */
+.card .avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 34px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -42px;
+  box-shadow: 0 8px 18px rgba(2, 86, 70, 0.12);
+}
+
+/* TITULOS */
+.card h1 {
+  margin-top: 54px; /* espacio para avatar */
+  text-align: center;
+  color: var(--accent-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+.card p.lead {
+  text-align: center;
+  color: var(--muted);
+  margin: 8px 0 20px;
+}
+
+/* FORM */
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 14px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #eef2f4;
+  background: #f7f7f8;
+  outline: none;
+  font-size: 14px;
+  color: #222;
+}
+input:focus, select:focus {
+  box-shadow: 0 6px 18px rgba(0,194,154,0.08);
+  border-color: rgba(0,194,154,0.2);
+}
+
+/* BOTON PRINCIPAL */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+.btn-primary {
+  background: linear-gradient(180deg, #060510 0%, #0b0810 100%);
+  color: white;
+  box-shadow: 0 8px 18px rgba(8,8,10,0.28);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid #e6e9ee;
+  color: #111827;
+}
+
+/* MENSAJES */
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.alert.error { background: #ffecec; color: #7a1b1b; }
+.alert.success { background: #e8ffef; color: #145a2b; }
+
+/* DASHBOARD: contenedor ancho con padding */
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 10px auto;
+}
+
+/* HEADER DASHBOARD */
+.header-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.header-panel h2 { font-size: 20px; color: #0f1724; }
+.header-panel p { color: var(--muted); margin-top: 6px; }
+
+/* BOTON NUEVO USUARIO */
+.btn-new {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: #05030a;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(8,8,10,0.12);
+}
+
+/* CARD TABLE */
+.card-table {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(10,30,20,0.03);
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.table thead th {
+  text-align: left;
+  padding: 12px 12px;
+  color: #374151;
+  font-weight: 700;
+  border-bottom: 1px solid #eef2f4;
+}
+.table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #f2f6f6;
+  vertical-align: middle;
+  color: #111827;
+}
+
+/* BADGES (rol/estado) */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.badge.admin { background: linear-gradient(90deg, #f5e7ff, #f0e3ff); color: #6b21a8; }
+.badge.produccion { background: linear-gradient(90deg, #e9f2ff, #eef6ff); color: #084298; }
+.badge.encargado { background: linear-gradient(90deg, #e6fff1, #f0fff6); color: #087b5b; }
+.badge.activo { background: #e8fff1; color: #0c7b44; padding: 6px 10px; }
+
+/* ACCIONES */
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #eef2f4;
+  text-decoration: none;
+  color: #111827;
+  margin-left: 6px;
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .card { padding: 28px; width: 92%; }
+  .header-panel { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .table thead { display: none; }
+  .table tbody td {
+    display: block;
+    width: 100%;
+  }
+  .table tbody tr { margin-bottom: 12px; display: block; background: #fbfffd; border-radius: 8px; padding: 12px; }
+}
