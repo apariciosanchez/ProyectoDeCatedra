@@ -1,0 +1,153 @@
+/* ======== ESTILO GENERAL ======== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f9f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+}
+
+/* ======== TITULOS ======== */
+h1, h2, h3 {
+  text-align: center;
+  color: #1d8348;
+  margin-bottom: 25px;
+}
+
+/* ======== FORMULARIOS ======== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+/* ======== BOTONES ======== */
+button, .btn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  background: #219150;
+}
+
+/* ======== TABLAS ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #27ae60;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+tbody tr:hover {
+  background: #e9f7ef;
+}
+
+/* ======== ALERTAS ======== */
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background: #d4efdf;
+  color: #1d8348;
+}
+
+.alert-error {
+  background: #fadbd8;
+  color: #922b21;
+}
+
+/* ======== BOTONES DE ACCIÓN EN TABLAS ======== */
+.action-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit {
+  background: #f1c40f;
+}
+
+.btn-edit:hover {
+  background: #d4ac0d;
+}
+
+.btn-delete {
+  background: #e74c3c;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
+
+.btn-history {
+  background: #2980b9;
+}
+
+.btn-history:hover {
+  background: #21618c;
+}
